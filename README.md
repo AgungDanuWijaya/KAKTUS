@@ -4,7 +4,7 @@ jDFT is a Java program to solve the KSDFT equation using the Gaussian function t
 - SCF with electron density mixing
 - Hartree-Fock
 - DFT: Neural Network, LDA functionals
-- XC inversion
+- XC Neural Network inversion
 ## Requirements
 - Linux OS
 - Java (https://www.java.com/en/download/) version >= 11
