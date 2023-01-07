@@ -1,5 +1,5 @@
-# jnnDFT : Java Neural Network Density Functional Theory for Molecule
-jDFT is a Java program to solve the KSDFT equation using the Gaussian function to get a total energy of molecules.
+# KAKTUS : Java Neural Network Density Functional Theory for Molecule
+KAKTUD is a Java program to solve the KSDFT equation using the Gaussian function to get a total energy of molecules.
 ## Features
 - SCF with electron density mixing
 - Hartree-Fock
