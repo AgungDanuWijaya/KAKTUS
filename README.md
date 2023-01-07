@@ -8,5 +8,3 @@ jDFT is a Java program to solve the KSDFT equation using the Gaussian function t
 ## Requirements
 - Linux OS
 - Java (https://www.java.com/en/download/) version >= 11
-## Interface
-<img src="https://github.com/AgungDanuWijaya/jNNDFT/blob/master/Screenshot%20from%202022-12-29%2015-39-06.png" alt="dftk logo" height="400px" />
