@@ -25,13 +25,14 @@ KAKTUD is a Java program to solve the KSDFT equation using the Gaussian function
 ------------
 
 ## Calculation Total Energy Example
+
 ------------
-H2O;
-Water;
-{"xyz": 
-{"1": [0.0000, 0.0000, 0.1173], 
-"2": [0.0000, 0.7572, -0.4692],
-"3": [0.0000, -0.7572, -0.4692]}, 
-"atom": ["O", "H","H"],
-"Spin_dn": 5, "Spin_up": 5};
+	H2O;
+	Water;
+	{"xyz": 
+	{"1": [0.0000, 0.0000, 0.1173], 
+	"2": [0.0000, 0.7572, -0.4692],
+	"3": [0.0000, -0.7572, -0.4692]}, 
+	"atom": ["O", "H","H"],
+	"Spin_dn": 5, "Spin_up": 5};
 ------------
