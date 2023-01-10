@@ -8,7 +8,7 @@ KAKTUD is a Java program to solve the KSDFT equation using the Gaussian function
 ## Requirements
 - Linux OS
 - Java (https://www.java.com/en/download/) version >= 11
-## Inversion ANN Example
+## Example of Calculation of ANN Parameters
 
 ------------
     {
@@ -24,7 +24,7 @@ KAKTUD is a Java program to solve the KSDFT equation using the Gaussian function
 }
 ------------
 
-## Calculation Total Energy Example
+## Example of Calculation of Total Energy
 
 ------------
 	H2O;
