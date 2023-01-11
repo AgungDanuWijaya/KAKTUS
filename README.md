@@ -22,7 +22,7 @@ KAKTUS is a Java program to solve the KSDFT equation using the Gaussian function
 	],
 	"simpul": [1, 2, 2, 1],
 	"name_ann": "ann_new_dft"
-}
+    }
 ------------
 
 ## Example of Calculation of Total Energy
