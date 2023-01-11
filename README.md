@@ -3,7 +3,7 @@ KAKTUS is a Java program to solve the KSDFT equation using the Gaussian function
 ## Features
 - SCF with electron density mixing
 - Hartree-Fock
-- DFT: Neural Network, LDA and GGA functionals
+- DFT : Neural Network, LDA and GGA functionals
 - Xchange Neural Network inversion
 ## Requirements
 - Linux OS
