@@ -8,6 +8,7 @@ KAKTUS is a Java program to solve the KSDFT equation using the Gaussian function
 ## Requirements
 - Linux OS
 - Java (https://www.java.com/en/download/) version >= 11
+-  MySQL for training ANN Exchange
 ## Example of Calculation of ANN Parameters
 
 ------------
