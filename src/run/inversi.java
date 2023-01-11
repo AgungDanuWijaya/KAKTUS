@@ -39,8 +39,8 @@ public class inversi {
         return r;
     }
 
-    public void test_all() throws ClassNotFoundException {
-        prepare_cmn();
+    public void test_all(int simpul[], String name_ann) throws ClassNotFoundException {
+          prepare_cmn(simpul,name_ann);
         double r = 0;
         data a = new data();
         String names[] = a.ae.split("}");
@@ -58,8 +58,8 @@ public class inversi {
         }
     }
 
-    public void TE() throws ClassNotFoundException {
-        prepare_cmn();
+    public void TE(int simpul[], String name_ann) throws ClassNotFoundException {
+        prepare_cmn(simpul,name_ann);
         String name[] = new data().name;
         int a = 0;
         int b = name.length;
@@ -69,39 +69,43 @@ public class inversi {
         System.out.println(hitung("N2") - hitung("N") - hitung("N"));
     }
 
-    public void prepare_cmn() throws ClassNotFoundException {
+    public void prepare_cmn(int simpul[], String name) throws ClassNotFoundException {
         this.kernel.a = this.a;
         this.kernel.tipebasis = a.basis.getSelectedItem().toString();
         this.kernel.verbose = 1; // 1 tambilkan proses
         String j[] = kernel.a.ann_conf.getText().split(",");
-        int simpul[] = {1, 2, 2, 1};
+        //int simpul[] = {1, 2, 2, 1};
         this.kernel.c_node = simpul;
         this.kernel.c_node = simpul;
-        this.kernel.URL_ANN = kernel.a.base.getText() + "/" + "ann_new_dft";
+        this.kernel.URL_ANN = kernel.a.base.getText() + "/" + name;
+        // this.kernel.URL_ANN = kernel.a.base.getText() + "/" + "ann_new_dft";
         this.kernel.Ex = "ANN";
         this.kernel.weight = new double[2][][][];
         init(1);
     }
 
-    public void run_train() throws ClassNotFoundException {
-        prepare_cmn();
-        String name[] = {"H2S,S,H,H}", "Na2,Na,Na}", "H2O2,H,H,O,O}", "HCl,H,Cl}", "HF,H,F}", "Cl2,Cl,Cl}", "H2,H,H}",
+    public void run_train(String name[], double re[][],int simpul[],String name_ann) throws ClassNotFoundException {
+        prepare_cmn(simpul,name_ann);
+        /*   String name[] = {"H2S,S,H,H}", "Na2,Na,Na}", "H2O2,H,H,O,O}", "HCl,H,Cl}", "HF,H,F}", "Cl2,Cl,Cl}", "H2,H,H}",
             "LiF,Li,F}", "LiH,Li,H}", "CH,C,H}", "OH,O,H}", "Cl2"};
-
+         */
         double con = 1 / 627.5;
-        double re[][] = {{-173.2 * con}, {-16.6 * con}, {-252.3 * con}, {-102.2 * con}, {-135.2 * con},
+        /*      double re[][] = {{-173.2 * con}, {-16.6 * con}, {-252.3 * con}, {-102.2 * con}, {-135.2 * con},
         {-57.2 * con}, {-102.5 * con}, {-137.6 * con}, {-56 * con}, {-79.9 * con}, {-101.3 * con},
         {-919.442}};
-
+         */
         double re_t[][] = new double[re.length][re[0].length];
         double delta = Math.pow(10, -3);
         double learning = 0.9;
         double peredam = 0.2;
         double iter = 10000;
+        System.out.println("run.inversi.run_train()1");
         init(1);
         save(this.kernel.weight);
         int mulai = 0;
+        System.out.println("run.inversi.run_train()1");
         for (int it = 0; it < iter; it++) {
+            System.out.println("run.inversi.run_train()1");
             double jacobi[][] = new double[name.length][];
             for (int l = 0; l < name.length; l++) {
                 int tan = 0;

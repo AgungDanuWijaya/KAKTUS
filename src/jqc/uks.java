@@ -22,12 +22,11 @@ public class uks {
         HashMap<Integer, HashMap<Integer, double[]>> points = a.points;
         Map<Integer, getdata.datakHF> bfs = kernel.gdata.get(geo);
         double[][] datagrid = a.setbfamps(kernel, bfs, points);
-      double[][] datagrid_kinetik = a.set_gr(kernel, bfs, points);
+        double[][] datagrid_kinetik = a.set_gr(kernel, bfs, points);
         double[][] datagrid_x = a.setbfamps_x(kernel, bfs, points);
         double[][] datagrid_y = a.setbfamps_y(kernel, bfs, points);
         double[][] datagrid_z = a.setbfamps_z(kernel, bfs, points);
 
-        
         Map<String, data_geo> data = kernel.geo.data;
         double Ej = 0, Exc = 0, Eh = 0;
         double Ejc = 0, Excc = 0, Ehc = 0;
@@ -75,7 +74,7 @@ public class uks {
         int panjango = kernel.spindn;
         double[][] Do = new double[C.length][panjango];
         double[][] Dc = new double[C.length][panjangc];
-         for (int i = 0; i < C.length; i++) {
+        for (int i = 0; i < C.length; i++) {
             for (int j = 0; j < panjango; j++) {
                 Do[i][j] = C[i][j] + Math.random() * 0.001;
             }
@@ -121,7 +120,6 @@ public class uks {
             double totalc = Ehc + 0.5 * Excc + Ejc + kernel.geo.energi(data.get(geo));
             total += totalc;
 
-         
             totalma[id] = total;
             id++;
             if (id == 2) {
@@ -141,8 +139,14 @@ public class uks {
             } else if (kernel.Ex.equals("ANN")) {
                 FX.ann(P, a, kernel, datagrid, points);
                 FXc.ann(Pc, a, kernel, datagrid, points);
-            }else if (kernel.Ex.equals("GGR")) {
-             FX.ann(P, a, kernel, datagrid, points);
+            } else if (kernel.Ex.equals("LDA_PZ")) {
+                FX.LDA_PZ(P, a, kernel, datagrid, points);
+                FXc.LDA_PZ(Pc, a, kernel, datagrid, points);
+            }  else if (kernel.Ex.equals("GGA_X_B88")) {
+                FX.GGA(P, a, kernel, datagrid, datagrid_x, datagrid_y, datagrid_z, points);
+                FXc.GGA(Pc, a, kernel, datagrid, datagrid_x, datagrid_y, datagrid_z, points);
+            }  else if (kernel.Ex.equals("GGR")) {
+                FX.ann(P, a, kernel, datagrid, points);
                 FXc.ann(Pc, a, kernel, datagrid, points);
                 if (kernel.spinup + kernel.spindn > 1) {
                     FX.GGR1(P, a, kernel, datagrid, datagrid_kinetik, points);

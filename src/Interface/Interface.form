@@ -270,7 +270,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="user">
       <Properties>
-        <Property name="text" type="java.lang.String" value="admin"/>
+        <Property name="text" type="java.lang.String" value="mabok_janda"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -278,8 +278,11 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="pass">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Hariminggu2017^"/>
+        <Property name="text" type="java.lang.String" value="yut28092018DAM^"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -301,7 +304,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="H2O;&#xa;Water;&#xa;{&quot;xyz&quot;: &#xa;{&quot;1&quot;: [0.0000, 0.0000, 0.1173], &#xa;&quot;2&quot;: [0.0000, 0.7572, -0.4692],&#xa;&quot;3&quot;: [0.0000, -0.7572, -0.4692]}, &#xa;&quot;atom&quot;: [&quot;O&quot;, &quot;H&quot;,&quot;H&quot;],&#xa;&quot;Spin_dn&quot;: 5, &quot;Spin_up&quot;: 5};"/>
+            <Property name="text" type="java.lang.String" value="{&quot;name&quot;:[&quot;H2S,S,H,H}&quot;,&quot;Na2,Na,Na}&quot;,&quot;H2O2,H,H,O,O}&quot;],&quot;con&quot;:0.0015936254980079682,&quot;re&quot;:[[-0.27601593625498005],[-0.026454183266932274],[-0.4020717131474104]]}&#xa;"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -392,6 +395,7 @@
             <StringItem index="1" value="MySQL"/>
           </StringArray>
         </Property>
+        <Property name="selectedIndex" type="int" value="1"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -400,8 +404,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="int_stat">
       <Properties>
-        <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="Hitung Integral"/>
+        <Property name="text" type="java.lang.String" value="Calculate Integral"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -410,13 +413,13 @@
     <Component class="javax.swing.JComboBox" name="exc_tipe">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="4">
             <StringItem index="0" value="ANN"/>
             <StringItem index="1" value="LDA"/>
-            <StringItem index="2" value="GGR"/>
+            <StringItem index="2" value="LDA_PZ"/>
+            <StringItem index="3" value="GGA_X_B88"/>
           </StringArray>
         </Property>
-        <Property name="selectedIndex" type="int" value="2"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -447,7 +450,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Hapus"/>
+        <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
@@ -491,7 +494,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Belajar"/>
+        <Property name="text" type="java.lang.String" value="Train"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>

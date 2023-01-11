@@ -60,7 +60,8 @@ public class db_cmd {
 
     public void get_mole(String name_mole, main_function kernel) throws ParseException {
         HashMap<String, Integer> hmap = kernel.atom_n.name_atom();
-        String query = "SELECT * FROM Quantum.xyz_molecule where Simbol='" + name_mole + "';";
+        String query = "SELECT * FROM Quantum.xyz_molecule where name='" + name_mole + "';";
+       // System.err.println(query);
         if (kernel.a.con_geo.getSelectedItem().toString().equals("MySQL")) {
             dbprocess db = new dbprocess(database.local, kernel);
             try {

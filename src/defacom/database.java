@@ -15,7 +15,7 @@ public class database {
     public database(int server, main_function kernel) {
         className = database.class.getName();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.err.println("Error loading driver: " + e.getMessage());
         }

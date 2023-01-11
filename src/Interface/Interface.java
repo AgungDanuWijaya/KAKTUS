@@ -101,15 +101,20 @@ public class Interface extends javax.swing.JFrame {
 
         url_db.setText("jdbc:mysql://127.0.0.1:3306/");
 
-        user.setText("admin");
+        user.setText("mabok_janda");
 
-        pass.setText("Hariminggu2017^");
+        pass.setText("yut28092018DAM^");
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
 
         data_geo.setBackground(new java.awt.Color(204, 204, 204));
         data_geo.setColumns(20);
         data_geo.setForeground(new java.awt.Color(51, 51, 51));
         data_geo.setRows(5);
-        data_geo.setText("H2O;\nWater;\n{\"xyz\": \n{\"1\": [0.0000, 0.0000, 0.1173], \n\"2\": [0.0000, 0.7572, -0.4692],\n\"3\": [0.0000, -0.7572, -0.4692]}, \n\"atom\": [\"O\", \"H\",\"H\"],\n\"Spin_dn\": 5, \"Spin_up\": 5};");
+        data_geo.setText("{\"name\":[\"H2S,S,H,H}\",\"Na2,Na,Na}\",\"H2O2,H,H,O,O}\"],\"con\":0.0015936254980079682,\"re\":[[-0.27601593625498005],[-0.026454183266932274],[-0.4020717131474104]]}\n");
         data_geo.setBorder(null);
         data_geo.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jScrollPane1.setViewportView(data_geo);
@@ -144,18 +149,17 @@ public class Interface extends javax.swing.JFrame {
         basis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6-31g", "3-21g", "sto-3g" }));
 
         con_geo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manual", "MySQL" }));
+        con_geo.setSelectedIndex(1);
 
-        int_stat.setSelected(true);
-        int_stat.setText("Hitung Integral");
+        int_stat.setText("Calculate Integral");
 
-        exc_tipe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANN", "LDA", "GGR" }));
-        exc_tipe.setSelectedIndex(2);
+        exc_tipe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANN", "LDA", "LDA_PZ", "GGA_X_B88" }));
 
         mtd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DFT", "UHF" }));
 
         thr_eri.setText("80000");
 
-        jButton7.setText("Hapus");
+        jButton7.setText("Delete");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -170,7 +174,7 @@ public class Interface extends javax.swing.JFrame {
         int_p.setForeground(new java.awt.Color(204, 0, 0));
         int_p.setText("Integral");
 
-        jButton8.setText("Belajar");
+        jButton8.setText("Train");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -319,7 +323,8 @@ public class Interface extends javax.swing.JFrame {
         main_function kernel = new main_function();
         kernel.a = this;
         dbprocess as = new dbprocess(0, kernel);
-        String query = "SELECT Nama,Simbol,Config FROM Quantum.xyz_molecule where Simbol='" + name_load.getText() + "';";
+        String query = "SELECT `name`,`name_long`,`data` FROM Quantum.xyz_molecule where name='" + name_load.getText() + "';";
+        System.out.println(query);
         String hasil[] = as.getRowSetData(query);
         if (hasil.length == 0) {
             JOptionPane.showMessageDialog(null, "Data tidak ditemukan di database !");
@@ -359,7 +364,7 @@ public class Interface extends javax.swing.JFrame {
         kernel.a = this;
         dbprocess as = new dbprocess(0, kernel);
         String data[] = data_geo.getText().split(";");
-        String query = "INSERT INTO `Quantum`.`xyz_molecule` ( `Nama`, `Simbol`, `Config`) VALUES ( '" + data[0] + "', '" + data[1] + "', '" + data[2] + "');";
+        String query = "INSERT INTO `Quantum`.`xyz_molecule` ( `name`,`name_long`,`data`) VALUES ( '" + data[0] + "', '" + data[1] + "', '" + data[2] + "');";
         as.setData(query);
         JOptionPane.showMessageDialog(null, "Sukses menyimpan data !");
         as.closeDB();
@@ -370,7 +375,7 @@ public class Interface extends javax.swing.JFrame {
         kernel.a = this;
         dbprocess as = new dbprocess(0, kernel);
         String data[] = data_geo.getText().split(";");
-        String query = "DELETE FROM `Quantum`.`xyz_molecule` WHERE `Simbol`='" + data[1] + "';";
+        String query = "DELETE FROM `Quantum`.`xyz_molecule` WHERE `name`='" + data[1] + "';";
         as.setData(query);
         JOptionPane.showMessageDialog(null, "Sukses menghapus data !");
         as.closeDB();
@@ -382,6 +387,10 @@ public class Interface extends javax.swing.JFrame {
         DefaultCaret caret = (DefaultCaret) output.getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
     class Multithreading extends Thread {
 
         Interface gui;
