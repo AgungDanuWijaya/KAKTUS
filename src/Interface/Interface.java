@@ -103,7 +103,7 @@ public class Interface extends javax.swing.JFrame {
 
         user.setText("mabok_janda");
 
-        pass.setText("yut28092018DAM^");
+        pass.setText("^");
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
