@@ -37,4 +37,19 @@ KAKTUS is a Java program to solve the KSDFT equation using the Gaussian function
 	"3": [0.0000, -0.7572, -0.4692]}, 
 	"atom": ["O", "H","H"],
 	"Spin_dn": 5, "Spin_up": 5};
+
+------------
+
+## Example of Calculation of Parameter ANN
+
+------------
+	{
+	"name": ["H2S,S,H,H}", "Na2,Na,Na}", "H2O2,H,H,O,O}"],
+	"con": 0.0015936254980079682,
+	"re": [
+		[-0.27601593625498005],
+		[-0.026454183266932274],
+		[-0.4020717131474104]
+	]
+        }
 ------------
